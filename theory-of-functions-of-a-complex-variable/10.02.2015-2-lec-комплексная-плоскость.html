@@ -1,0 +1,120 @@
+<p>В 1545 году появились впервые комплексные числа в трудах итальянца Кардано. Он нашёл формулу для решения кубических уравнений. ТФКП, как наука, начала формироваться только в 18 веке.</p>
+
+
+
+<h2 id="комплексная-плоскость">Комплексная Плоскость</h2>
+
+<p>Комплексные чила – точки Евклидовой плоскости с двумя алгебраическими операциями.</p>
+
+<p><script type="math/tex" id="MathJax-Element-1">R_2^2</script></p>
+
+<p>Операция сложения: <br>
+<script type="math/tex" id="MathJax-Element-2">(a;b)+(c;d)=(a+c;b+d)</script> </p>
+
+<p>Операция умножения: <br>
+<script type="math/tex" id="MathJax-Element-3">(a;b)(c;d)=(ac-bd;ad+bc)</script></p>
+
+<p>Расстояние: <br>
+<script type="math/tex" id="MathJax-Element-4">\rho(A;B)=\sqrt{(a-c)^2+(b-d)^2}</script></p>
+
+<p><script type="math/tex" id="MathJax-Element-5">y</script> – мнимая ось (<script type="math/tex" id="MathJax-Element-6">\mathcal{Im}</script>). <br>
+<script type="math/tex" id="MathJax-Element-7">x</script> – действительная ось (<script type="math/tex" id="MathJax-Element-8">\mathcal{Re}</script>).</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs 1c">            y^                          CC
+             <span class="hljs-string">|                       </span>
+             <span class="hljs-string">|</span>
+             <span class="hljs-string">|        (a in R)</span>
+-------------<span class="hljs-string">|----.----.------------------&gt;x</span>
+            <span class="hljs-number">0</span><span class="hljs-string">|    2 ((a;0) in CC)</span>
+             <span class="hljs-string">|    :</span>
+             <span class="hljs-string">|....:</span>
+             <span class="hljs-string">|-3i</span></code></pre>
+
+<p>Множество комплексиных чисел вида (a;0) изоморфно множеству вещественых чисел. Мы будем считать, что (a;0) = a. Кроме того среди всех комплексных чисел Эйлер выделил число  (0;1) = i.</p>
+
+<p><script type="math/tex" id="MathJax-Element-9">R \subset C</script></p>
+
+<p>Теорема. Любое комплексное число <script type="math/tex" id="MathJax-Element-10">(a;b)</script> можно записать в виде <script type="math/tex" id="MathJax-Element-11">(a;b) = a + bi</script> (алгебраическая форма комплексного числа). Будем обозначать <script type="math/tex" id="MathJax-Element-12">Z = a+ bi</script>, где  <script type="math/tex" id="MathJax-Element-13">a =\mathcal{Re} Z</script>, <script type="math/tex" id="MathJax-Element-14">b = \mathcal{Im} Z</script>.</p>
+
+
+
+<p><script type="math/tex; mode=display" id="MathJax-Element-15">a+bi = (a;0) + (b;0)(0;1) = (a;0) + (b \cdot 0 - 0 \cdot 1; b \cdot 1 + 0 \cdot 0) = (a;0) + (0;b) = (a;b)</script></p>
+
+
+
+<p><script type="math/tex; mode=display" id="MathJax-Element-16">(a;b) = (c;d)</script></p>
+
+<p>Два комплексных часла равны тогда и только тогда, когда равны их действительные и мнимые части</p>
+
+<p>Рассмотрим <script type="math/tex" id="MathJax-Element-17">i</script>, <script type="math/tex" id="MathJax-Element-18">i = (0;1)(0;1) = (-1;0) \Rightarrow i^2 = (-1;0)</script>.</p>
+
+
+
+<p><script type="math/tex; mode=display" id="MathJax-Element-19">\boxed{i = \sqrt{-1}}</script></p>
+
+<blockquote>
+  <p><strong>Замечание.</strong> Чтобы перемножить два комплексных числа, не надо помнить никаких формул. Нужно записать их в алгебраической форме, затем перемножить как двучлен на двучлен и квадрат заменить на -1. У нас получится алгебраическая форма произведения.</p>
+</blockquote>
+
+<p>Пример.  <br>
+<script type="math/tex" id="MathJax-Element-20">(2;3)\cdot(-4;5) = (2+3i)(-4+5i) = -8+10i-12i-15 = -23 - 2i </script> <br>
+Проверка:  <br>
+<script type="math/tex" id="MathJax-Element-21">(((2\cdot-4)-3\cdot5);(2\cdot5)+(3\cdot-4))</script></p>
+
+<p><script type="math/tex" id="MathJax-Element-22">\overline Z = a -bi</script></p>
+
+<p><script type="math/tex" id="MathJax-Element-23">\overline Z</script>  и <script type="math/tex" id="MathJax-Element-24">Z</script> симметричны относительно вещественной оси</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs 1c">      ^
+      <span class="hljs-string">|  Z</span>
+  ----<span class="hljs-string">|-------&gt;</span>
+      <span class="hljs-string">| (dot Z)</span></code></pre>
+
+<p><script type="math/tex" id="MathJax-Element-25">Z = x + iy</script></p>
+
+<p>Модулем числа <script type="math/tex" id="MathJax-Element-26">Z</script> называется расстояние от точки <script type="math/tex" id="MathJax-Element-27">Z</script> до точки O. Обозначается также, как в вещественном анализе <script type="math/tex" id="MathJax-Element-28">r=|Z| = \rho(Z;0)</script>.</p>
+
+<p><script type="math/tex" id="MathJax-Element-29">\rho(A;B) = \sqrt{(0-x)^2+(0-y)^2} = \sqrt{x^2+y^2}</script></p>
+
+<p>Любое комплексное число имеет единственный модуль.</p>
+
+<p>Аргументом комплексного числа <script type="math/tex" id="MathJax-Element-30">Z</script> называется величина угла, на который надо повернуть вокруг точки ноль луч <script type="math/tex" id="MathJax-Element-31">(o;x)</script> до совпадения с лучом <script type="math/tex" id="MathJax-Element-32">(o;Z)</script></p>
+
+<p>Комплексное число имеет бесконечно много аргументов. Все они отличаются на <script type="math/tex" id="MathJax-Element-33">360^{\circ} n</script>.</p>
+
+<p>При <script type="math/tex" id="MathJax-Element-34">Z = 0</script> определение аргумента не работает. Счита ем, что число 0 аргумента не имеет. </p>
+
+<p>Главным значением аргумента называется его значение, заключённое в промежутке <script type="math/tex" id="MathJax-Element-35">[-\pi;\pi]</script>.</p>
+
+<p>Теорема. Два отличных от нуля комплексных числа равны тогда и только тогда, когда их модули равны, а аргументы равны или отличаются на величину <script type="math/tex" id="MathJax-Element-36">2\pi n</script></p>
+
+<p>Пример отыскания главного аргумента:</p>
+
+<p>Найти главный аргумент числа <script type="math/tex" id="MathJax-Element-37">-1+i \sqrt{3}</script></p>
+
+<ol>
+<li>Изображаем число на плоскости, стараясь соблюдать масштаб.</li>
+</ol>
+
+
+
+<pre class="prettyprint"><code class=" hljs 1c">                        ^
+                Z ....... (i sqrt(<span class="hljs-number">3</span>))
+                  :     <span class="hljs-string">|</span>
+                  :     <span class="hljs-string">|</span>
+        ----------.-----<span class="hljs-string">|----------------------------&gt;</span>
+                 -<span class="hljs-number">1</span>    <span class="hljs-number">0</span><span class="hljs-string">|</span>
+                        <span class="hljs-string">|</span></code></pre>
+
+<ol>
+<li><p>Рассмотрим треугольник, ось которого лежит на числовой оси.</p></li>
+<li><p>Найдём длины его катетов. <br>
+<img src="data:image/png;base64,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"></p></li>
+<li><p>Рисуем главное значение.</p></li>
+</ol>
+
+<p>Ответ: <script type="math/tex" id="MathJax-Element-38">z = 180^{\circ} - \alpha</script></p>

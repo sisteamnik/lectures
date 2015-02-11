@@ -1,0 +1,472 @@
+<h1 id="элементы-комбинаторики">Элементы комбинаторики</h1>
+
+<p><div class="toc">
+<ul>
+<li><a href="#элементы-комбинаторики">Элементы комбинаторики</a><ul>
+<li><ul>
+<li><ul>
+<li><a href="#пример-1">Пример 1.</a></li>
+<li><a href="#пример-2">Пример 2.</a></li>
+<li><a href="#пример-3">Пример 3.</a></li>
+<li><a href="#пример-4">Пример 4.</a></li>
+<li><a href="#пример-5">Пример 5.</a></li>
+<li><a href="#пример-7">Пример 7</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</p>
+
+
+
+<h4 id="пример-1">Пример 1.</h4>
+
+<p>Шесть различных книг. Сколько вариантов расстановки.</p>
+
+<p>На первое место можно поставить 6-тью способами. На второе 5-тью и тд.</p>
+
+<p>Протокол возможных вариантов:</p>
+
+<table>
+<thead>
+<tr>
+  <th></th>
+  <th></th>
+  <th></th>
+  <th></th>
+  <th></th>
+  <th></th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>1</td>
+  <td>2</td>
+  <td>3</td>
+  <td>4</td>
+  <td>5</td>
+  <td>6</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td>5</td>
+  <td>4</td>
+  <td>3</td>
+  <td>2</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>4</td>
+  <td>3</td>
+  <td>2</td>
+  <td>1</td>
+  <td>6</td>
+</tr>
+</tbody></table>
+
+
+
+
+<p><script type="math/tex; mode=display" id="MathJax-Element-1">P_6 = 6!</script> <br>
+Ответ: <script type="math/tex" id="MathJax-Element-2">6! = 720</script></p>
+
+<p>Общая формула числа перестановок:</p>
+
+
+
+<p><script type="math/tex; mode=display" id="MathJax-Element-3">\boxed{P_n = n!}</script></p>
+
+
+
+<h4 id="пример-2">Пример 2.</h4>
+
+<p>Ребёнок играет с буквами, сколько слов он может составить?</p>
+
+
+
+<p><script type="math/tex; mode=display" id="MathJax-Element-4">
+\boxed{A } \quad
+\boxed{A } \quad
+\boxed{A } \quad
+\boxed{B } \quad
+\boxed{B } \quad
+\boxed{C } \quad
+\boxed{C }
+</script></p>
+
+<p>Рисуем протокол возможных вариантов, добавим индексы, что бы различать одинаковые буквы:</p>
+
+<p><script type="math/tex; mode=display" id="MathJax-Element-5">
+\boxed{A_1} \quad
+\boxed{A_{2} } \quad
+\boxed{A_{3} } \quad
+\boxed{B_{4} } \quad
+\boxed{B_{5} } \quad
+\boxed{C_{6} } \quad
+\boxed{C_{7} }
+</script>
+<script type="math/tex; mode=display" id="MathJax-Element-6">
+\boxed{B_{4}} \quad
+\boxed{A_1 } \quad
+\boxed{B_{5} } \quad
+\boxed{A_{2} } \quad
+\boxed{A_{3} } \quad
+\boxed{C_{6} } \quad
+\boxed{C_{7} }
+</script>
+</p>
+
+<p><script type="math/tex; mode=display" id="MathJax-Element-7">\dots</script></p>
+
+
+
+<p><script type="math/tex; mode=display" id="MathJax-Element-8"> \widetilde{P}_{3+2+2}^7 = \frac{7!}{3!*2!*2!} = 210 </script></p>
+
+<p><b>Эта задача на число перестановок с повторениями</b></p>
+
+
+
+<p><script type="math/tex; mode=display" id="MathJax-Element-9">\boxed{ \widetilde{P}_{k_1+k_2+ \dots + k_l} = 
+ \frac{k_1+k_2+\dots+k_l}{k_1\cdot k_2 \dots k_l}}
+ </script></p>
+
+
+
+<h4 id="пример-3">Пример 3.</h4>
+
+<p>Задача Зуева. Группе из 10-ти человек подарили три путёвки на Карибы, в Турцию и в Красный Бор.</p>
+
+<p>// в чём вопрос непонятно</p>
+
+<p>Будем разыгрывать путёвки в три круга, выигравший удаляется.</p>
+
+<p>Рисуем протокол:</p>
+
+<ol>
+<li><p>Способ (протокол 1)</p>
+
+<table>
+<thead>
+<tr>
+  <th>1</th>
+  <th>2</th>
+  <th>3</th>
+  <th>4</th>
+  <th>5</th>
+  <th>6</th>
+  <th>7</th>
+  <th>8</th>
+  <th>9</th>
+  <th>10</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>II</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>III</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>I</td>
+</tr>
+<tr>
+  <td>II</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>I</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>III</td>
+</tr>
+<tr>
+  <td>-</td>
+  <td>III</td>
+  <td>I</td>
+  <td>II</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>Способ (протокол 2)</p>
+
+<table>
+<thead>
+<tr>
+  <th>I</th>
+  <th>II</th>
+  <th>III</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>10</td>
+  <td>1</td>
+  <td>5</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>1</td>
+  <td>10</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>4</td>
+  <td>I</td>
+</tr>
+</tbody></table>
+</li>
+</ol>
+
+<p>Протокол 1 – размещение: <script type="math/tex" id="MathJax-Element-10">A_{10}^3 = 10 \cdot 9 \cdot 8 = 720</script></p>
+
+<p>Протокол 2 – перестановка с повторениями: <br>
+<script type="math/tex; mode=display" id="MathJax-Element-11"> \widetilde{P}_{7+1+ 1+1} = 
+ \frac{10!}{7! \cdot 1! \cdot 1! \cdot 1!} = 720
+ </script> <br>
+Но что будет, если нам нужно посчитать большие числа? <br>
+<script type="math/tex; mode=display" id="MathJax-Element-12">A_{1019}^{728} = 
+ \widetilde{P}_{1019+\underbrace{1+1+...+1}_{728}} = 
+ \frac{1019!}{(1019-728)!} 
+ </script> <br>
+<script type="math/tex; mode=display" id="MathJax-Element-13">
+\boxed{A_n^k = \frac{n!}{(n-k)!}}
+</script></p>
+
+
+
+<h4 id="пример-4">Пример 4.</h4>
+
+<p>Условия предыдущей задачи, но выигравшие не удаляются. <br>
+Протокол:</p>
+
+<table>
+<thead>
+<tr>
+  <th>I</th>
+  <th>II</th>
+  <th>III</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>10</td>
+  <td>1</td>
+  <td>5</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>1</td>
+  <td>10</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>4</td>
+  <td>I</td>
+</tr>
+</tbody></table>
+
+
+<p><script type="math/tex" id="MathJax-Element-14">10^3 = 10 \cdot 10 \cdot 10 = 1000</script></p>
+
+<p>Размещение с повторениями</p>
+
+<p><script type="math/tex" id="MathJax-Element-15">\widetilde{A}_{10}^3 = 10^3 \quad \boxed{\widetilde{A}_n^k = n^k}</script></p>
+
+
+
+<h4 id="пример-5">Пример 5.</h4>
+
+<p>Группе из 10 человек поручили выбрать трёх счастливчиков, капать навоз.</p>
+
+<p>Протокол 1:</p>
+
+<table>
+<thead>
+<tr>
+  <th>1</th>
+  <th>2</th>
+  <th>3</th>
+  <th>4</th>
+  <th>5</th>
+  <th>6</th>
+  <th>7</th>
+  <th>8</th>
+  <th>9</th>
+  <th>10</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>-</td>
+  <td>+</td>
+  <td>-</td>
+  <td>-</td>
+  <td>+</td>
+  <td>+</td>
+  <td>+</td>
+  <td>+</td>
+  <td>+</td>
+  <td>+</td>
+</tr>
+<tr>
+  <td>+</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>+</td>
+  <td>+</td>
+  <td>+</td>
+  <td>+</td>
+  <td>+</td>
+  <td>+</td>
+</tr>
+<tr>
+  <td>+</td>
+  <td>+</td>
+  <td>-</td>
+  <td>+</td>
+  <td>-</td>
+  <td>+</td>
+  <td>-</td>
+  <td>+</td>
+  <td>+</td>
+  <td>+</td>
+</tr>
+</tbody></table>
+
+
+
+
+<p><script type="math/tex; mode=display" id="MathJax-Element-16"> \widetilde{P}_{7+3} = 
+ \frac{10!}{7! \cdot 3!} = 120
+ </script> <br>
+Протокол 2:</p>
+
+<table>
+<thead>
+<tr>
+  <th>I</th>
+  <th>II</th>
+  <th>III</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>2</td>
+  <td>3</td>
+  <td>4</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>4</td>
+  <td>2</td>
+</tr>
+<tr>
+  <td>1</td>
+  <td>9</td>
+  <td>10</td>
+</tr>
+</tbody></table>
+
+
+
+
+<p><script type="math/tex; mode=display" id="MathJax-Element-17">\frac{10 \cdot 9 \cdot 8( 7 \cdot 6 \cdot 5 \cdot 4\cdot 3 \cdot 2\cdot 1)}{3!(7 \cdot 6 \cdot 5 \cdot 4\cdot 3 \cdot 2\cdot 1)} = \frac{10!}{3!7!}</script></p>
+
+<p>Пример найти сочетание <script type="math/tex" id="MathJax-Element-18">C_{10}^3</script> (из десяти по три): <br>
+<script type="math/tex; mode=display" id="MathJax-Element-19">
+C_{10}^3 = \frac{10!}{3!(10-3)!}
+</script> <br>
+<script type="math/tex; mode=display" id="MathJax-Element-20">
+\boxed{C_{n}^k = \frac{n!}{k!(n-k)!}}
+</script> <br>
+Следствие <br>
+<script type="math/tex; mode=display" id="MathJax-Element-21">
+C_{n}^{n-k} = \frac{n!}{(n-k)!(n-n+k)! } \Rightarrow \boxed{C_{n}^{n-k}  = C_{n}^k }
+</script></p>
+
+<p>Бином  <br>
+<script type="math/tex; mode=display" id="MathJax-Element-22">
+(a+b)^{10} = C_{10}^0 a^{10} b^0 \cdot
+C_{10}^0 a^9 b^1 \cdot
+C_{10}^0 a^8 b^2 \cdot
+C_{10}^0 a^7 b^3 \cdot
+C_{10}^0 a^6 b^4 \cdot
+C_{10}^0 a^5 b^5 \cdot
+C_{10}^0 a^4 b^6 \cdot
+C_{10}^0 a^3 b^7 \cdot
+C_{10}^0 a^2 b^8 \cdot
+C_{10}^0 a^1 b^9 \cdot
+C_{10}^0 a^0 b^{10}
+</script></p>
+
+
+
+<h4 id="пример-7">Пример 7</h4>
+
+<p>Найти количество всех подмножеств множества <script type="math/tex" id="MathJax-Element-23">\{a,b,c,d,e,f\}</script></p>
+
+<table>
+<thead>
+<tr>
+  <th align="center">……..</th>
+  <th><script type="math/tex" id="MathJax-Element-24">a</script></th>
+  <th><script type="math/tex" id="MathJax-Element-25">b</script></th>
+  <th><script type="math/tex" id="MathJax-Element-26">c</script></th>
+  <th><script type="math/tex" id="MathJax-Element-27">d</script></th>
+  <th><script type="math/tex" id="MathJax-Element-28">e</script></th>
+  <th><script type="math/tex" id="MathJax-Element-29">f</script></th>
+</tr>
+</thead>
+<tbody><tr>
+  <td align="center"><script type="math/tex" id="MathJax-Element-30">\emptyset</script></td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+</tr>
+<tr>
+  <td align="center"><script type="math/tex" id="MathJax-Element-31">\{a\}</script></td>
+  <td>+</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+</tr>
+<tr>
+  <td align="center"><script type="math/tex" id="MathJax-Element-32">\{b\}</script></td>
+  <td>-</td>
+  <td>+</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+  <td>-</td>
+</tr>
+</tbody></table>
+
+
+
+
+<p><script type="math/tex; mode=display" id="MathJax-Element-33">
+C_6^0 + C_6^1 + C_6^2 + C_6^3 + C_6^4 + C_6^5 + C_6^6 = 2^6
+</script></p>
+
+<p>Число подмножеств любого множества:</p>
+
+
+
+<p><script type="math/tex; mode=display" id="MathJax-Element-34">2^n \text{, где n - число множеств}</script></p>

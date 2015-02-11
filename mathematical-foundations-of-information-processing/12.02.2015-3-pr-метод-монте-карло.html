@@ -1,0 +1,50 @@
+<h1 id="метод-монте-карло">Метод Монте-Карло</h1>
+
+<p>Метод Монте-Карло позволяет считать</p>
+
+<p>consp:1</p>
+
+<p>Пример 1. <br>
+Найдите площадь фигуры, ограниченной прямыми  <br>
+ <script type="math/tex" id="MathJax-Element-1">y = 1</script> <br>
+ <script type="math/tex" id="MathJax-Element-2">y = \frac{10}{N}x + 0.5</script> <br>
+<script type="math/tex" id="MathJax-Element-3"> y = \frac{-6}{ N} x + 37</script></p>
+
+<p>Эта фигура треугольник.  <br>
+1) <script type="math/tex" id="MathJax-Element-4">n = 30</script> <br>
+2) <script type="math/tex" id="MathJax-Element-5">n = 1000</script> <br>
+3) найти площадь с помощью геометрии.</p>
+
+<p>Пример 2. <br>
+Найдите площадь фигуры, ограниченной линиями</p>
+
+<p><script type="math/tex" id="MathJax-Element-6">4x^2 + 8y^3 = 2</script> <br>
+ <script type="math/tex" id="MathJax-Element-7">x+2Ny = 1</script> <br>
+ <script type="math/tex" id="MathJax-Element-8">x = -1</script> <br>
+<script type="math/tex" id="MathJax-Element-9"> y = -1 </script></p>
+
+<p><script type="math/tex" id="MathJax-Element-10">n = 1000</script></p>
+
+<p>Решение прим 1</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs lua">Plot[{(<span class="hljs-number">10</span>x/<span class="hljs-number">7</span>) + <span class="hljs-number">0.5</span>, (-<span class="hljs-number">6</span>/<span class="hljs-number">7</span>)x + <span class="hljs-number">37</span>, <span class="hljs-number">1</span>}, {x, -<span class="hljs-number">2</span>, <span class="hljs-number">45</span> }]
+
+A = RegionPlot[y &gt; <span class="hljs-number">1</span> &amp;&amp; y&lt; (<span class="hljs-number">10</span>/<span class="hljs-number">7</span>)x + <span class="hljs-number">0.5</span> &amp;&amp; y &lt; (-<span class="hljs-number">6</span>/<span class="hljs-number">7</span>)x + <span class="hljs-number">37</span>, {x, <span class="hljs-number">0</span>, <span class="hljs-number">43</span>}, {y, <span class="hljs-number">1</span>, <span class="hljs-number">23</span>}]
+
+n = <span class="hljs-number">30</span>
+
+X = RandomReal[{<span class="hljs-number">0</span>, <span class="hljs-number">43</span>}, n]
+Y = RandomReal[{<span class="hljs-number">1</span>, <span class="hljs-number">21</span>}, n]
+
+B = Table[{X<span class="hljs-string">[[i]]</span>, Y<span class="hljs-string">[[i]]</span>}, {i,n}]
+
+F = ListPlot[B]
+Show[A,F]
+
+k =<span class="hljs-number">0</span>
+
+For[i=<span class="hljs-number">1</span>,i&lt;n+<span class="hljs-number">1</span>,i++,If[Y<span class="hljs-string">[[i]]</span> &gt; <span class="hljs-number">1</span> &amp;&amp; Y<span class="hljs-string">[[i]]</span>&lt; (<span class="hljs-number">10</span>/<span class="hljs-number">7</span>)X<span class="hljs-string">[[i]]</span> + <span class="hljs-number">0.5</span> &amp;&amp; Y<span class="hljs-string">[[i]]</span> &lt; (-<span class="hljs-number">6</span>/<span class="hljs-number">7</span>)X<span class="hljs-string">[[i]]</span> + <span class="hljs-number">37</span>]]
+
+H = (k/n) * <span class="hljs-number">20</span> * <span class="hljs-number">43</span>//N</code></pre>
